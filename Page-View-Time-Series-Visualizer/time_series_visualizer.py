@@ -28,8 +28,8 @@ def draw_line_plot():
 def draw_bar_plot():
     # Copy and modify data for monthly bar plot
     df_bar = df.copy(deep=True)
-    df_bar['year'] =df_bar.index.year
-    df_bar['month'] =df_bar.index.month
+    df_bar['year'] = df_bar.index.year
+    df_bar['month'] = df_bar.index.month
 
     # Group data by year and month, then calculate the average daily page views for each month
     df_grouped = df_bar.groupby(['year','month'])['value'].mean().unstack()
